@@ -374,4 +374,77 @@
 <!-- CONTACTO -->
 <section id="contacto">
   <div class="section-label" data-es="CONTACTO" data-en="CONTACT">CONTACTO</div>
-  <h2 class="section-title" data-es="Hablemos" data-en="
+  <h2 class="section-title" data-es="Hablemos" data-en="Let's talk">Hablemos</h2>
+  <div class="contact-grid">
+    <div class="contact-info">
+      <p data-es="Si tienes un proyecto interesante, una oportunidad de colaboración o simplemente quieres conectar, no dudes en escribirme." data-en="If you have an interesting project, a collaboration opportunity or simply want to connect, feel free to reach out.">Si tienes un proyecto interesante, una oportunidad de colaboración o simplemente quieres conectar, no dudes en escribirme.</p>
+      <div class="contact-items">
+        <div class="contact-item">
+          <div class="contact-icon">&#x2709;&#xFE0F;</div>
+          <a href="mailto:jongarciaecheverria@gmail.com">jongarciaecheverria@gmail.com</a>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">&#x1F4CD;</div>
+          <span data-es="Donostia - San Sebastian, Espana" data-en="Donostia - San Sebastian, Spain">Donostia - San Sebastian, Espana</span>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">&#x1F4BC;</div>
+          <a href="https://www.linkedin.com/in/jon-garcia-echeverria-257634b2" target="_blank">LinkedIn</a>
+        </div>
+      </div>
+      <div class="contact-socials">
+        <a href="https://www.linkedin.com/in/jon-garcia-echeverria-257634b2" target="_blank" class="social-btn">&#x1F4BC;</a>
+        <a href="https://instagram.com/jongarcia94" target="_blank" class="social-btn">&#x1F4F8;</a>
+        <a href="https://github.com/jongaar2424-glitch" target="_blank" class="social-btn">&#x1F419;</a>
+        <a href="mailto:jongarciaecheverria@gmail.com" class="social-btn">&#x2709;&#xFE0F;</a>
+      </div>
+    </div>
+    <div>
+      <form onsubmit="return false;" style="display:flex;flex-direction:column;gap:16px">
+        <div>
+          <label style="font-size:.85rem;color:var(--muted);display:block;margin-bottom:6px" data-es="Nombre" data-en="Name">Nombre</label>
+          <input type="text" style="width:100%;background:var(--card);border:1px solid var(--border);color:var(--text);padding:10px 14px;border-radius:8px;font-family:'Inter',sans-serif;font-size:.9rem;outline:none" onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--border)'"/>
+        </div>
+        <div>
+          <label style="font-size:.85rem;color:var(--muted);display:block;margin-bottom:6px">Email</label>
+          <input type="email" style="width:100%;background:var(--card);border:1px solid var(--border);color:var(--text);padding:10px 14px;border-radius:8px;font-family:'Inter',sans-serif;font-size:.9rem;outline:none" onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--border)'"/>
+        </div>
+        <div>
+          <label style="font-size:.85rem;color:var(--muted);display:block;margin-bottom:6px" data-es="Mensaje" data-en="Message">Mensaje</label>
+          <textarea rows="5" style="width:100%;background:var(--card);border:1px solid var(--border);color:var(--text);padding:10px 14px;border-radius:8px;font-family:'Inter',sans-serif;font-size:.9rem;outline:none;resize:vertical" onfocus="this.style.borderColor='var(--accent)'" onblur="this.style.borderColor='var(--border)'"></textarea>
+        </div>
+        <button class="btn-primary" type="submit" data-es="Enviar mensaje" data-en="Send message">Enviar mensaje</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-text">2025 Jon Garcia Echeverria</div>
+  <div class="footer-text" data-es="Hecho con dedicacion" data-en="Made with dedication">Hecho con dedicacion</div>
+</footer>
+
+<script>
+function setLang(lang) {
+  document.querySelectorAll('.lang-btn').forEach(function(btn) {
+    btn.classList.toggle('active', btn.textContent.toLowerCase() === lang);
+  });
+  document.querySelectorAll('[data-' + lang + ']').forEach(function(el) {
+    el.textContent = el.getAttribute('data-' + lang);
+  });
+  document.querySelectorAll('.es-content').forEach(function(el) {
+    el.style.display = lang === 'es' ? '' : 'none';
+  });
+  document.querySelectorAll('.en-content').forEach(function(el) {
+    el.style.display = lang === 'en' ? '' : 'none';
+  });
+  document.documentElement.lang = lang;
+  localStorage.setItem('lang', lang);
+}
+(function() {
+  var saved = localStorage.getItem('lang') || 'es';
+  setLang(saved);
+})();
+</script>
+</body>
+</html>
